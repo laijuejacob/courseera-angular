@@ -9,14 +9,17 @@ LunchChecker.$inject = ['$scope'];
 function LunchChecker($scope) {
   $scope.lunchMenu = "";
   $scope.message = "";
-
+  
   $scope.MenuItemsCount = function() {
-    var itemsCount = $scope.lunchMenu.split(',').length;
+    if ($scope.lunchMenu === "") {
+      return 0;
+    }
+    var itemsCount = $scope.lunchMenu.trim(',').split(',').filter(item => item !== "").length;
     return itemsCount;
   }
 
   $scope.SetDisplayMessage = function(count) {
-    if (count == 0)
+    if (count === 0)
     {
       $scope.message = "Please enter data first";
       return;

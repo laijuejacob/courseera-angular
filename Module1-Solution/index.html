@@ -4,8 +4,8 @@
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <script src="app.js"></script>
     <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
@@ -19,6 +19,7 @@
              class="form-control"
              ng-model="lunchMenu">
          </div>
+         <p>** Please note that an empty item within the list will not be added to the count, i.e., , , will not be counted!</p>
          <div class="form-group">
              <button class="btn btn-default" ng-click="CheckMenuItemsCount();">Check If Too Much</button>
          </div>
